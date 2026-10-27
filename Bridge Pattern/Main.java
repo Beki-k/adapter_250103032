@@ -22,3 +22,5 @@ public class Main {
         Internet internet = new SchoolProxyInternet();
         internet.connectTo("wikipedia.org");
         internet.connectTo("gaming.com");
+    }
+}
