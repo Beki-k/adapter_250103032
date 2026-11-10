@@ -1,0 +1,31 @@
+package com.ecommerce;
+
+/**
+ * Subsystem Class 5: FraudDetectionService
+ * Responsible for detecting suspicious orders.
+ */
+public class FraudDetectionService {
+
+    // Step 1: Check whether an order is suspicious
+    public boolean isSus(String customerId, double amount) {
+
+        System.out.println("[FraudDetectionService] Checking suspicious activity...");
+
+        // Step 1.1: Check customer ID
+        if (customerId == null || customerId.isEmpty()) {
+            return true;
+        }
+
+        // Step 1.2: Check payment amount
+        if (amount <= 0 || amount > 5000) {
+            return true;
+        }
+
+        return false;
+    }
+
+    // Step 2: Check whether an order is legitimate
+    public boolean isLegit(String customerId, double amount) {
+        return !isSus(customerId, amount);
+    }
+}
